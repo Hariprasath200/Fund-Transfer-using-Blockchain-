@@ -1,0 +1,56 @@
+{% extends 'fund/layouts/main.html' %}
+
+{% block title %}
+Transactions
+{% endblock title %}
+
+{% block content %}
+<style>
+    body{
+        background-image: url('static/images/bg.jpg');
+        background-size: 85%;
+        background-position-x: 70%;
+        background-position-y: -35%;
+    }
+</style>
+<style>
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .card-text {
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Fund Transactions</h1>
+    <div class="row">
+        {% for fund in funds %}
+        <div class="col-md-4">
+            <div class="card">
+                <h2 class="card-title">{{ fund.name }}</h2>
+                <p class="card-text">Amount: ${{ fund.amount }}</p>
+                <p class="card-text">Mobile: {{ fund.mobile }}</p>
+                <p class="card-text">Email: {{ fund.email }}</p>
+                <p class="card-text">Description: {{ fund.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+</div>
+
+    </div>
+</div>
+
+{% endblock content %}

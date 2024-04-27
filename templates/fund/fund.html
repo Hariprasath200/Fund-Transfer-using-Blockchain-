@@ -1,0 +1,97 @@
+{% extends 'fund/layouts/main.html' %}
+
+{% block title %}
+FUND
+{% endblock title %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2>Create a New Fund</h2>
+    </div>
+    <div class="card-body">
+        <form method="post" class="fund-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_name">Name:</label>
+                {{ form.name }}
+            </div>
+            
+            <div class="form-group">
+                <label for="id_amount">Amount:</label>
+                {{ form.amount }}
+            </div>
+            <div class="form-group">
+                <label for="id_mobile">Mobile:</label>
+                {{ form.mobile }}
+            </div>
+            <div class="form-group">
+                <label for="id_email">Email:</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label for="id_description">Description:</label>
+                {{ form.description }}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+<style>
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    .card-header {
+        background-color: #f0f0f0;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .card-body {
+        padding: 20px 0;
+    }
+
+    .fund-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"] {
+        padding: 10px;
+        width: calc(100% - 22px); /* Adjusted width to accommodate padding and borders */
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock content %}

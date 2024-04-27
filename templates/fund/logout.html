@@ -1,0 +1,25 @@
+{% extends 'fund/layouts/main.html' %}
+
+
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+
+
+<style>
+    body{
+      background-image: url('static/images/bg.jpeg');
+      background-size: 70%;
+    }
+  </style>
+  <h2>Logout</h2>
+  <p>Are you sure you want to logout?</p>
+  <form action="{% url 'logout' %}" method="post">
+      {% csrf_token %}
+      <button type="submit">Logout</button>
+  </form>
+
+
+{% endblock content %}

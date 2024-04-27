@@ -1,0 +1,44 @@
+{% extends 'fund/layouts/main.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block content %}
+<style>
+    body{
+        background-image: url('static/images/bg.jpg');
+        background-size: 85%;
+        background-position-x: 70%;
+        background-position-y: -35%;
+    }
+</style>
+
+<title>Success</title>
+<style>
+ 
+    .container {
+        text-align: center;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+    p {
+        color: #333;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Transaction Added Successfully</h1>
+    <p>Your transaction has been successfully added.</p>
+</div>
+
+
+
+{% endblock content %}
